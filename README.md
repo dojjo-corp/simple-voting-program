@@ -1,0 +1,1 @@
+This is a simple Command Line Program to test out possible algorithms I can use for my group project for this semester. It was originally meant to be a web app; Python3 is going to be the major language to be used for this project.
