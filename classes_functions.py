@@ -31,17 +31,25 @@ class Voter:
         self.email = email
         self.votes_cast = 0
 
-    def vote(self, candidate_id):
+    def vote(self, candidate):
         # use list of candidate objects
         # for candidate in candidates:
         #     if candidate.get_id == candidate_id:
         #         if self.votes_cast > 1:
         #             print('You can only vote once!')
         #         candidate.votes += 1
-
+        Candidate.votes += 1
         self.votes_cast += 1
 
+    def show_profile(self):
+        print(f'User ID: {self.id}\nEmail: {self.email}\nVotes Cast: {self.votes_cast}')
 
+    def update_profile(self, ):
+        print('You can only update your email address\n')
+        self.email = input('Enter new email: ')
+
+
+# generic functions (non-class functions)
 def rpa():
     '''
     rpa basically stands for Random Password-Function Argument.
@@ -69,6 +77,7 @@ def login():
             print('Incorrect Password!')
         else:
             print('Login Successful!')
+            return
 
 
 def sign_up():
@@ -94,13 +103,3 @@ def sign_up():
     for k in keys:
         if user_id == k:
             print(f"Your id: {k}\nYour password: {accounts[k]['pass']}")
-
-
-response = input('1. Login\n2. Sign up\n> ')
-if response == '1':
-    login()
-elif response == '2':
-    sign_up()
-
-print("Welcome to Dojjo's Voting System!")
-print("\nChoose an option:\n1. Start voting\n2. ")
