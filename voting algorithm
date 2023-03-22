@@ -1,0 +1,47 @@
+VOTING PROGRAM
+Classes:
+	Poll
+		Attributes:
+		    poll_id
+			poll_items - list of options for poll (eg. candidates to be voted for)
+			
+		Methods:
+            show_all() - displays candidates on poll object
+            delete_item() - deletes single candidate item on poll object
+		
+		
+	Voter
+		Attributes:
+			ID - VTxxx (VT followed by three randomly generated integers)
+			name
+			email
+			password
+			votes_cast
+		
+		Methods:
+			vote() - increases candidate's votes by 1; voter's votes_cast by 1
+			show_profile() - displays voter's account info
+			update_profile() - changes only account email
+			delete_account() - deletes vote object from db (dictionary at the moment though...)
+		
+	Candidate:
+		Attributes:
+			id - CDxxx (CD followed by three randomly generated integers)
+			name
+			position
+		votes
+
+	Admin:
+		Attributes:
+			id - ADxxx (AD followed by three randomly generated integers)
+			name
+			password
+			email
+			polls_created - list of polls created
+		
+		Methods:
+			create_poll() - creates a new instance of the poll class
+			del_poll() - deletes existing poll object
+			modify_poll() - add or remove items on a poll object
+
+
